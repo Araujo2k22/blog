@@ -10,9 +10,9 @@ function conecta() : mysqli
     $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $port);
 
     if(!$conexao){
-        echo 'Error: Não foi possível conectar ao MySql.' . PHP_EQL;
-        echo 'Debugging errno: ' . mysqli_connect_errno() . PHP_EQL;
-        echo 'Debugging error: ' . mysqli_connect_error() . PHP_EQL;
+        echo 'Error: Não foi possível conectar ao MySql.' . PHP_EOL;
+        echo 'Debugging errno: ' . mysqli_connect_errno() . PHP_EOL;
+        echo 'Debugging error: ' . mysqli_connect_error() . PHP_EOL;
         return null;
     } 
     return $conexao;
