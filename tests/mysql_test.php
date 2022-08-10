@@ -1,7 +1,7 @@
 <?php
 
 require_once '../includes/funcoes.php';
-require_once '../core/coonexao_mysql.php';
+require_once '../core/conexao_mysql.php';
 require_once '../core/sql.php';
 require_once '../core/mysql.php';
 
@@ -20,7 +20,7 @@ function insert_teste($nome, $email, $senha) : void
 //teste select banco de dados
 function buscar_teste() : void
 {
-    $usuario = buscar('usuario',[ 'id','nome','email'],[],'');
+    $usuarios = buscar('usuario',[ 'id','nome','email'],[],'');
     print_r($usuarios);
 }
 
