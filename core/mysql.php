@@ -139,7 +139,7 @@ function buscar(string $entidade, array $campos = ['*'], array $criterio = [], s
     $coringa_criterio = [];
 
     foreach ($criterio as $expressao) {
-        echo 'passei pr aqui';
+        echo 'olá tudo bom';
         $dado = $expressao[count($expressao) - 1];
 
         $tipo[] = gettype($dado)[0];
@@ -159,7 +159,7 @@ function buscar(string $entidade, array $campos = ['*'], array $criterio = [], s
 
     $instrucao = select($entidade, $campos, $coringa_criterio, $ordem);
     $conexao = conecta();
-
+    
     $stmt = mysqli_prepare($conexao, $instrucao);
 
     if(isset($tipo)) {
