@@ -35,7 +35,7 @@
                                 require="required" id="senha" name="senha">
                             </div>
                             <div class="text-right">
-                                <button class="btn btn-success"
+                                <button class="btn btn-danger"
                                         type="submit">Acessar</button>
                             </div>
                         </form>
