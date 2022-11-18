@@ -12,19 +12,15 @@
                     <?php
                         include 'includes/topo.php';
                         include 'includes/valida_login.php';
-                        if($_SESSION['login']['usuario']['adm'] !==1){
+                        if($_SESSION['login']['usuario']['habilitado'] !==1){
                             header('Location: index.php');
                         }
                     ?>
                 </div>
             </div>
             <div class="row" style="min-height: 500px;">
-                <div class="col-md-12">
-                    <?php include 'includes/menu.php'; ?>
-                </div>
                 <div class="col-md-10" style="padding-top: 50px;">
                 <h2>Usuário</h2>
-                <?php include 'includes/busca.php'; ?>
                 <?php
                     require_once 'includes/funcoes.php';
                     require_once 'core/conexao_mysql.php';
@@ -50,8 +46,8 @@
                             'nome',
                             'email',
                             'data_criacao',
-                            'ativo',
-                            'adm'
+                            'score',
+                            'habilitado'
                         ],
                         $criterio,
                         'data_criacao DESC, nome ASC'
@@ -82,20 +78,13 @@
                             <td><a href='core/usuario_repositorio.php?acao=status&id=<?php echo $entidade['id']?>
                             &valor=<?php echo !$entidade['ativo']?>'><?php echo ($entidade['ativo']==1) ?
                             'Desativar' : 'Ativar'; ?></a></td>
-                            <td><a href='core/usuario_repositorio.php?acao=adm&id=<?php echo $entidade['id']?>
-                            &valor=<?php echo !$entidade['adm']?>'><?php echo ($entidade['adm']==1) ?
+                            <td><a href='core/usuario_repositorio.php?acao=habilitado&id=<?php echo $entidade['id']?>
+                            &valor=<?php echo !$entidade['habilitado']?>'><?php echo ($entidade['habilitado']==1) ?
                             'Rebaixar' : 'Promover'; ?></a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <?php
-                    include 'includes/rodape.php'
-                ?>
             </div>
         </div>
         </div>

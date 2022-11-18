@@ -1,55 +1,62 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Usuário | Projeto para Web com PHP</title>
-        <link rel="stylesheet"
-            href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <?php include 'includes/topo.php'; ?>
-                </div>
-            </div>
-            <div class="row" style="min-height: 500px;">
-                <div class="col-md-12">
-                    <?php include 'includes/menu.php'; ?>
-                </div>    
-                <div class="col-md-10" style="padding-top: 50px ;">        
-                    <div class="card-header">Login</div>
-                    <div class="card-body">
-                        <form method="post" action="core/usuario_repositorio.php">
-                            <input type="hidden" name="acao" value="login">
-                            <div class="form-group">
-                                <label for="nome">E-mail</label>
-                                <input class="form-control" type="text"
-                                require="required" id="email" name="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="nome">Senha</label>
-                                <input class="form-control" type="password"
-                                require="required" id="senha" name="senha">
-                            </div>
-                            <div class="text-right">
-                                <button class="btn btn-danger"
-                                        type="submit">Acessar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>                
-            <div class="row">
-                <div class="col-md-12">
-                    <?php
-                    include 'includes/rodape.php';
-                    ?>
-                </div>
-            </div>
+<head>
+    <link rel="stylesheet" 
+              href="lib2/css/bootstrap.css">
+    <link rel="stylesheet" 
+              href="style.css">
+</head>
+<body>
+    <section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="img/logo.png"
+            class="img-fluid" alt="Phone image">
         </div>
-        <script src="lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
-    </body>
-</html>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form method="post" action="core/usuario_repositorio.php">
+                <input type="hidden" name="acao" value="login">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="email" name="email" class="form-control form-control-lg" require="required" />
+                    <label class="form-label" for="email">Email</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" id="senha" name="senha" class="form-control form-control-lg" require="required" />
+                    <label class="form-label" for="senha">Senha</label>
+                </div>
+
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                    <label class="form-check-label" for="form1Example3"> Lembre de mim </label>
+                    </div>
+                    <a href="#!">Esqueceu a senha?</a>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+
+                <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center fw-bold mx-3 mb-0 text-muted">OU</p>
+                </div>
+
+                <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+                role="button">
+                <i class="fab fa-facebook-f me-2"></i>Continuar com Facebook
+                </a>
+                <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+                role="button">
+                <i class="fab fa-google me-2"></i>Continuar com Google</a>
+            </form>
+        </div>
+        </div>
+    </div>
+    </section>  
+</body>
