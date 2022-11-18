@@ -4,7 +4,7 @@ date_default_timezone_set('America/Sao_Paulo');
 function conecta() : mysqli
 {
     $servidor = 'localhost';
-    $banco = 'blog';
+    $banco = 'site';
     $port = 3307;
     $usuario = 'root';
     $senha = '';
